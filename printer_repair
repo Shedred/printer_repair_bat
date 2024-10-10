@@ -1,0 +1,68 @@
+net stop spooler
+
+del %systemroot%\system32\spool\printers\* /Q
+
+net start spooler
+
+wmic printer list brief
+
+
+ECHO off
+
+ECHO Status Code	HEX			Description
+ECHO ----------------------------------------------------------------------
+ECHO 0		0			Printer ready
+
+ECHO 1		1			Printer paused
+
+ECHO 2		2			Printer error
+
+ECHO 4		4			Printer pending deletion
+
+ECHO 8		8			Paper jam
+
+ECHO 16		10			Out of paper
+
+ECHO 32		20			Manual feed
+
+ECHO 64		40			Paper problem
+
+ECHO 128		80			Printer offline
+
+ECHO 256		100			IO active
+
+ECHO 512		200			Printer busy
+
+ECHO 1024		400			Printing
+
+ECHO 2048		800			Printer output bin full
+
+ECHO 4096		1000			Not available.
+
+ECHO 8192		2000			Waiting
+
+ECHO 16384		4000			Processing
+
+ECHO 32768		8000			Initializing
+
+ECHO 65536		10000			Warming up
+
+ECHO 131072		20000			Toner low
+
+ECHO 262144		40000			No toner
+
+ECHO 524288		80000			Page punt
+
+ECHO 1048576		100000			User intervention
+
+ECHO 2097152		200000			Out of memory
+
+ECHO 4194304		400000			Door open
+
+ECHO 8388608		800000			Server unknown
+
+ECHO 6777216		1000000			Power save
+
+ECHO ---------------------------------------------------------
+
+PAUSE
